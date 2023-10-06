@@ -1,0 +1,88 @@
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.video {
+    margin-block: 25px;
+    text-align: center;
+}
+.buttonNext {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonNext:hover {
+  background-color: rgb(114, 49, 49); /* Change color on hover */
+} 
+
+.table-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #333;
+    background-color: #f5f5f5;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.list-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.cool-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cool-list li {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    margin: 5px 0;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.cool-list li:before {
+    content: '\2022';
+    color: #007bff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
