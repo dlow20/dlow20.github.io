@@ -1,0 +1,13 @@
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+button {
+    margin: 10px;
+}
+
+.prof-img {
+    position: absolute;
+    transition: transform 0.5s;
+}
