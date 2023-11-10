@@ -1,13 +1,45 @@
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(214, 209, 209); /* Change to a light background color for better contrast */
+}
+
+#myContainer {
+    width: 650px;
+    height: 600px;
     position: relative;
-    overflow: hidden;
+    background: rgb(66, 66, 66); /* Darken the background color for better contrast */
+    
+    border-style: dashed;
+    border-radius: 5%;
+    border-width: 5cap;
+    border-color: color();
+
+    display: flex;
+    flex-direction: column; /* Change the flex direction to stack children vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+#movingIMG {
+    width: 50px;
+    height: 50px;
+    position: absolute; /* You may need to adjust the positioning as needed */
+    cursor: pointer;
+}
+
+#buttons {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    padding: 25px;
 }
 
 button {
-    margin: 10px;
-}
-
-.prof-img {
-    position: absolute;
-    transition: transform 0.5s;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(66, 66, 66); /* Darken the button background color for better contrast */
+    color: white; /* Set text color to white for contrast */
 }

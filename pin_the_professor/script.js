@@ -1,34 +1,117 @@
 function moveProfessor(professor) {
-    const professorImg = document.getElementById('professor');
+    // Remove the buttons.
+    var buttonOne = document.getElementById("buttonOne");
+    buttonOne.remove();
+    var buttonTwo = document.getElementById("buttonTwo");
+    buttonTwo.remove();
+    var buttonThree = document.getElementById("buttonThree");
+    buttonThree.remove();
 
-    let xPos = Math.random() * (window.innerWidth - professorImg.width);
-    let yPos = Math.random() * (window.innerHeight - professorImg.height);
+    // Define the image source URLs for each professor
+    const professorImages = {
+        snider: 'https://bsnider.cs.georgefox.edu/img/snider.jpg',
+        wilson: 'https://bwilson.cs.georgefox.edu/img/bwilson.jpg',
+        orr: 'https://cs.georgefox.edu/img/bio/Orr.jpg'
+    };
 
-    professorImg.src = `https://bsnider.cs.georgefox.edu/img/${professor}.jpg`;
-    professorImg.style.left = xPos + 'px';
-    professorImg.style.top = yPos + 'px';
+    // Get the professor's image URL
+    const imageURL = professorImages[professor];
 
-    const maxX = window.innerWidth - professorImg.width;
-    const maxY = window.innerHeight - professorImg.height;
+    // Create a new image on "game.html"
+    var myImage = document.createElement("IMG");
+    myImage.setAttribute("src", imageURL);
+    myImage.setAttribute("alt", professor);
+    myImage.setAttribute("height", 50)
+    myImage.setAttribute("width", 50)
 
-    const moveInterval = setInterval(() => {
-        const xStep = (Math.random() - 0.5) * 10;
-        const yStep = (Math.random() - 0.5) * 10;
+    // Append to body and save as x.
+    document.getElementById("movingIMG").appendChild(myImage);
+    elem = document.getElementById("movingIMG");
 
-        xPos += xStep;
-        yPos += yStep;
+    // Adds an event listener when player wins. 
+    document.getElementById("movingIMG").addEventListener("click", stop);
+    
+    // Adjust speed of image based on level of difficulty chosen.
+    var interval = 0;
+    if (professor == 'snider') {
+        interval = 20;
+    } else if (professor == 'wilson') {
+        interval = 10;
+    } else if (professor == 'orr') {
+        interval = 2;
+    }
 
-        if (xPos < 0 || xPos > maxX || yPos < 0 || yPos > maxY) {
-            // Reverse direction when hitting the edge
-            xStep *= -1;
-            yStep *= -1;
+    /*bouncingImage randomly changes the position of an img
+    within the boundaries of a div container.*/
+    var id = null;
+    function bouncingImage() {
+        var pos = 0;
+        var direction = 0;
+        clearInterval(id);
+
+            // Set interval of running frame() to speed. 
+            id = setInterval(frame, interval);
+
+            /*frame uses pov to determine the location of an img.
+            changes the postion using styling of the image. 
+            */
+            function frame() {
+                if (pos < 25 || pos > 525) {
+
+                    // Get cointainer by id.
+                    var myContainer = document.getElementById("myContainer");
+                    // Get a random color.
+                    var randomColor = getRandomColor();
+                    // Set border of cointainer to the color.
+                    myContainer.style.borderColor = randomColor;
+
+                    // Randomize position and direction.
+                    pos = Math.floor(Math.random() * 551);
+                    direction = Math.floor(Math.random() * 6);
+
+                } else if (direction == 0) {
+                    pos+=2;
+                    elem.style.left = pos + 'px';
+                    elem.style.top = pos + 'px';
+
+                } else if (direction == 1) {
+                    pos+=2;
+                    elem.style.top = pos + 'px';
+
+                } else if (direction == 2) {
+                    pos+=2;
+                    elem.style.left = pos + 'px';
+
+                } else if (direction == 3) {
+                    pos-=2;
+                    elem.style.left = pos + 'px';
+                    elem.style.top = pos + 'px';
+
+                } else if (direction == 4) {
+                    pos-=2;
+                    elem.style.top = pos + 'px';
+
+                } else if (direction == 5) {
+                    pos-=2;
+                    elem.style.left = pos + 'px';
+
+                }
+            }
         }
+    bouncingImage()
 
-        professorImg.style.left = xPos + 'px';
-        professorImg.style.top = yPos + 'px';
-    }, 100);
+    function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
 
-    setTimeout(() => {
-        clearInterval(moveInterval);
-    }, 10000); // Stop moving after 10 seconds
-}
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function stop() {
+        // Navigate to "game.html"
+        window.location.href = 'https://www.youtube.com/watch?v=04854XqcfCY';
+    }
+};

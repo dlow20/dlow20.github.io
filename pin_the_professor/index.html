@@ -7,11 +7,20 @@
     <title>Pin the Professor</title>
 </head>
 <body>
-    <img id="professor" src="https://bsnider.cs.georgefox.edu/img/snider.jpg" alt="snider" class="prof-img">
-    <button onclick="moveProfessor('snider')">Pin Professor Snider</button>
-    <button onclick="moveProfessor('wilson')">Pin Professor Wilson</button>
-    <button onclick="moveProfessor('orr')">Pin Professor Orr</button>
+    <div id="buttons">
+        <h1>Pin the Professor</h1>
+        <p>Speed of the image is based on how quickly each professor grades.</p>
+        
+        <br><button id="buttonOne" onclick="moveProfessor('snider')">Catch Professor Snider [Easy]</button>
+        <br><button id="buttonTwo" onclick="moveProfessor('wilson')">Catch Professor Wilson [Medium]</button>
+        <br><button id="buttonThree" onclick="moveProfessor('orr')">Catch Professor Orr [Hard]</button>
 
-    <script src="script.js"></script>
+        <br><div id ="myContainer">
+            <div id ="movingIMG"></div>
+        </div>
+    </div>
+    
+    <script src="script.js">
+    </script>
 </body>
 </html>
