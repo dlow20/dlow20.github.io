@@ -9,7 +9,7 @@ body {
     width: 650px;
     height: 600px;
     position: relative;
-    background: rgb(66, 66, 66); /* Darken the background color for better contrast */
+    background: rgb(53, 50, 50); /* Darken the background color for better contrast */
     
     border-style: dashed;
     border-radius: 5%;
@@ -40,6 +40,6 @@ body {
 button {
     padding: 10px;
     cursor: pointer;
-    background-color: rgb(66, 66, 66); /* Darken the button background color for better contrast */
-    color: white; /* Set text color to white for contrast */
+    background-color: rgb(53, 50, 50); /* Darken the button background color for better contrast */
+    color: rgb(214, 209, 209); /* Set text color to white for contrast */
 }
