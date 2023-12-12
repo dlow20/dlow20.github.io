@@ -57,44 +57,35 @@ function moveProfessor(professor) {
             */
             function frame() {
                 if (pos < 25 || pos > 525) {
-
                     // Get cointainer by id.
                     var myContainer = document.getElementById("myContainer");
                     // Get a random color.
                     var randomColor = getRandomColor();
                     // Set border of cointainer to the color.
                     myContainer.style.borderColor = randomColor;
-
                     // Randomize position and direction.
                     pos = Math.floor(Math.random() * 551);
                     direction = Math.floor(Math.random() * 6);
-
                 } else if (direction == 0) {
                     pos+=2;
                     elem.style.left = pos + 'px';
                     elem.style.top = pos + 'px';
-
                 } else if (direction == 1) {
                     pos+=2;
                     elem.style.top = pos + 'px';
-
                 } else if (direction == 2) {
                     pos+=2;
                     elem.style.left = pos + 'px';
-
                 } else if (direction == 3) {
                     pos-=2;
                     elem.style.left = pos + 'px';
                     elem.style.top = pos + 'px';
-
                 } else if (direction == 4) {
                     pos-=2;
-                    elem.style.top = pos + 'px';
-
+                    elem.style.top = pos + 'px';s
                 } else if (direction == 5) {
                     pos-=2;
                     elem.style.left = pos + 'px';
-
                 }
             }
         }
@@ -103,7 +94,6 @@ function moveProfessor(professor) {
     function getRandomColor() {
         var letters = "0123456789ABCDEF";
         var color = "#";
-
         for (var i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
         }
